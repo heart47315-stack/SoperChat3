@@ -1,12 +1,13 @@
-import { View, Text } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { View, Text, Button } from "react-native";
+import { useRouter } from "expo-router";
 
-export default function CharacterProfile() {
-  const { id } = useLocalSearchParams<{ id: string }>();
+export default function Index() {
+  const router = useRouter();
 
   return (
-    <View>
-      <Text>Character ID: {id}</Text>
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text>SuperChat</Text>
+      <Button title="Login" onPress={() => router.push("/login")} />
     </View>
   );
 }
